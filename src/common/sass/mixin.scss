@@ -20,10 +20,57 @@
     margin: ($t/40) ($r/40) ($b/40) ($l/40);
 }
 
-$mainC: #f88;
-@mixin bg-image($url){
+$color333: #333;
+$color666: #666;
+$color999: #999;
+$coloraaa: #aaa;
+$colorbbb: #bbb;
+$colorccc: #ccc;
+
+
+
+@mixin bg-image($url){//设置图标
     background-image: url($url + "@2x.png");
     @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
         background-image: url($url + "@3x.png");
     }
+}
+
+@mixin clearfix(){//清除浮动
+    &:after{
+        display: block;
+        content: "";
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden;
+    }
+}
+
+@mixin wordbreak() {//文本自动换行
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+@mixin defaultlabel() {//设置如表单元素可编辑样式
+    appearance: normal;
+}
+
+@mixin textoverflow() {//单行文本缩略
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+}
+
+%centerblock{//设置垂直居中
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
 }

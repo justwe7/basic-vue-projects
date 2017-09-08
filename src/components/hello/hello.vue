@@ -36,13 +36,5 @@ export default {
 
 <!-- scoped添加私有样式  lang添加babel编译  rel添加IDE识别 -->
 <style scoped lang="scss" rel="stylesheet/scss">
-.hello{
-  background-color: #ff1;
-  height: unit(33rem);
-  h1, h2 {
-    color: $mainC;
-    background: no-repeat;
-    @include bg-image('./img');
-  }
-}
+
 </style>
