@@ -1,0 +1,29 @@
+@function unit($value) {//使用函数变量单位
+    @return $value/40;
+}
+@mixin font($value){//定义字体
+    font-size: ($value/40);
+}
+@mixin width($value){//定义宽度
+    width: ($value/40);
+}
+@mixin height($value){//定义高度
+    height: ($value/40);
+}
+@mixin line-height($value){//定义行高
+    line-height: ($value/40);
+}
+@mixin padding($t:0,$r:0,$b:0,$l:0){//定义padding
+    padding: ($t/40) ($r/40) ($b/40) ($l/40);
+}
+@mixin margin($t:0,$r:0,$b:0,$l:0){//定义margin
+    margin: ($t/40) ($r/40) ($b/40) ($l/40);
+}
+
+$mainC: #f88;
+@mixin bg-image($url){
+    background-image: url($url + "@2x.png");
+    @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+        background-image: url($url + "@3x.png");
+    }
+}
