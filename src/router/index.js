@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Hello from '@/components/hello/hello'
+// import Hello from '@/components/hello/hello'
 import Home from '@/components/home/home'
 import Nofind from '@/components/404/Nofind'
 
@@ -15,7 +15,8 @@ const routes = [//设置路由的页面
         path: '/hello',
         title: '首页',
         name: 'Hello',
-        component: Hello
+        component: resolve => require(['@/components/hello/hello'], resolve)//路由页面懒加载
+        // component: Hello
     },
     {
         path: '*',
