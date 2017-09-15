@@ -53,9 +53,4 @@ const router = new VueRouter({
 // router.push('/home');// 强制设置默认启动的路由页面
 
 
-var a = new VueRouter({
-  routes,
-  linkActiveClass: 'active'
-})
-
 export default router
