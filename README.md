@@ -7,7 +7,7 @@ vue项目基础构建
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8848
 npm run dev
 
 # build for production with minification
