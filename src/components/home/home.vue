@@ -5,6 +5,9 @@
       <li class="fl">111</li>
       <li class="fr">222</li>
     </ul>
+    <a href="javascript:;" @click="push">添加路由（无页面跳404）</a>
+    <router-link to="/home/child">打开子页面</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,6 +17,13 @@ export default {
   data() {
     return {
       msg: '主页'
+    }
+  },
+  methods: {
+    push() {
+      this.$router.push({
+          path: `/home/${111}`
+        })
     }
   }
 }

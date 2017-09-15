@@ -1,8 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Hello from '@/components/hello/hello'
-import Home from '@/components/home/home'
+// import Home from '@/components/home/home'
+import Homechild from '@/components/home-child/home-child'
 import Nofind from '@/components/404/Nofind'
+
+
+const Home = (resolve) => { //按需加载方式1
+  import('@/components/home/home').then((module) => {
+    resolve(module)
+  })
+}
 
 Vue.use(VueRouter)
 const routes = [//设置路由的页面
@@ -10,12 +18,18 @@ const routes = [//设置路由的页面
         path: '/home',
         // redirect:'/hello', //重定向至 某个页面
         component: Home,
+        children: [
+            {
+              path: 'child',
+              component: Homechild
+            }
+          ]
     },
     {
         path: '/hello',
         title: '首页',
         name: 'Hello',
-        component: resolve => require(['@/components/hello/hello'], resolve)//路由页面懒加载
+        component: resolve => require(['@/components/hello/hello'], resolve)//路由页面//按需加载方式2
         // component: Hello
     },
     {
