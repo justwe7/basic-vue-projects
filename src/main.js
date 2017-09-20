@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './vuex'
 import './axios'
+// Vue.use(Vuex);
 
 import 'my_common/css/reset.css';//引入css reset
 import 'my_common/sass/mixin.scss';//引入sass mixin
@@ -15,6 +17,7 @@ Vue.config.productionTip = false;//禁止vue启动提示
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

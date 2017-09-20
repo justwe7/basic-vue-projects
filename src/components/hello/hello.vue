@@ -20,6 +20,7 @@ export default {
     }
   },
   created() {
+    console.log(`vuex数据state count:${this.$store.state.count}`);
     this.$axios.get(
      '/doctor/init',{
         params: {
