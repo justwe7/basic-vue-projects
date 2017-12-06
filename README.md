@@ -1,8 +1,8 @@
 # basevue
-vue项目基础构建，按自己需求配置vue-router，axios，vuex文件基本配置及简单实用语法。
-修改/build/utils.js，增加sass-mixin的方便移动端计算rem单位
-修改/build/webpack.base.conf.js，增加路径简写
-缩减css/js等的hash长度为7
++vue项目基础构建，按自己需求配置vue-router，axios，vuex文件基本配置及简单实用语法。<br>
++修改/build/utils.js，增加sass-mixin的方便移动端计算rem单位<br>
++修改/build/webpack.base.conf.js，增加路径简写<br>
++缩减css/js等的hash长度为7<br>
 
 
 ## Build Setup
