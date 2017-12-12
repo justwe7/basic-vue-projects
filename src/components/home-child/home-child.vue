@@ -5,6 +5,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+import {httpLogout,RES_OK} from "@/api/post.js"
+
 export default {
   name: 'hello',
   data() {
@@ -12,8 +14,12 @@ export default {
       msg: '主页下的子页面'
     }
   },
-  mounted() {
-    console.log(this.$route.path)
+  created() {
+    httpLogout().then(function (response) {
+      console.log(response)
+    }).catch(function (error) {
+      throw Error('失败')
+    })
   }
 }
 </script>

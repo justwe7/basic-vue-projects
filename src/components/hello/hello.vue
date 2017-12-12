@@ -12,6 +12,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+import {httpHello,RES_OK} from "@/api/get.js"
+
 export default {
   name: 'hello',
   data() {
@@ -21,7 +23,14 @@ export default {
   },
   created() {
     console.log(`vuex数据state count:${this.$store.state.count}`);
-    this.$axios.get(
+    httpHello(8848).then((res) => {
+      if (res.errcode == RES_OK) {
+        console.log(res)
+      }
+    }).catch((err) => {
+      throw Error(err)
+    })
+    /*this.$axios.get(
      '/doctor/init',{
         params: {
           weixinid: 2
@@ -30,7 +39,7 @@ export default {
       console.log(response)
     }).catch(function (error) {
       console.log(9)
-    });
+    });*/
   }
 }
 </script>
