@@ -5,6 +5,8 @@
 +缩减css/js等的hash长度为7<br>
 
 
+如果使用mock.js文件方式模拟数据请求，官方推荐方式chrome无法监听网络请求，可以在dev-server中配置服务，在42行左右位置(proxy配置之前)添加 if (process.env.NODE_ENV === 'development') {app.use('', require('../src/api/mock.js'))}。但是每次修改mock数据都需要重启环境
+
 ## Build Setup
 
 ``` bash
