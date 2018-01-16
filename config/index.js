@@ -33,7 +33,7 @@ module.exports = {
             target: 'https://easy-mock.com/mock/59af8c11e0dc6633419e9161',
             changeOrigin: true,
             pathRewrite: {
-              '^/api': '/'
+              '^/api': '/api'
             }
           }
     },
