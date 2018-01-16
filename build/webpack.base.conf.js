@@ -24,8 +24,9 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'my_assets': resolve('./src/assets'),//  以下新增路径简写
-      'my_component': resolve('./src/components'),// 模板
-      'my_common': resolve('./src/common') //公用引入路径
+      '@tmp': resolve('./src/components'),// 模板组件
+      '@bstmp': resolve('./src/base'),// 模板子组件
+      '@common': resolve('./src/common') //公用引入路径
     }
   },
   module: {
