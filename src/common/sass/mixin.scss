@@ -1,24 +1,29 @@
+@function rem($value) {//使用函数变量单位
+  @return $value/32 + rem;
+}
 @function unit($value) {//使用函数变量单位
-    @return $value/40;
+    @return $value/32;
 }
 @mixin font($value){//定义字体
-    font-size: ($value/40);
+    font-size: ($value/32);
 }
 @mixin width($value){//定义宽度
-    width: ($value/40);
+    width: ($value/32);
 }
 @mixin height($value){//定义高度
-    height: ($value/40);
+    height: ($value/32);
 }
 @mixin line-height($value){//定义行高
-    line-height: ($value/40);
+    line-height: ($value/32);
 }
 @mixin padding($t:0,$r:0,$b:0,$l:0){//定义padding
-    padding: ($t/40) ($r/40) ($b/40) ($l/40);
+    padding: ($t/32) ($r/32) ($b/32) ($l/32);
 }
 @mixin margin($t:0,$r:0,$b:0,$l:0){//定义margin
-    margin: ($t/40) ($r/40) ($b/40) ($l/40);
+    margin: ($t/32) ($r/32) ($b/32) ($l/32);
 }
+
+
 
 $color333: #333;
 $color666: #666;
@@ -26,6 +31,9 @@ $color999: #999;
 $coloraaa: #aaa;
 $colorbbb: #bbb;
 $colorccc: #ccc;
+$def_fc_color: #666;
+$def_current_color: #26a2ff;
+$def_bg_color: #f8f8f8;
 
 
 
@@ -36,7 +44,42 @@ $colorccc: #ccc;
     }
 }
 
-@mixin clearfix(){//清除浮动
+@mixin border-1px-b($color){//设置下边框
+  position: relative;
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid $color;
+  }
+}
+
+@mixin border-1px-l($color){//设置左边框
+  position: relative;
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-left: 1px solid $color;
+  }
+}
+
+@mixin text-overflow($line){//多行缩略文本
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow:ellipsis;
+  -webkit-line-clamp: $line;
+}
+
+
+%clearfix(){//清除浮动
     &:after{
         display: block;
         content: "";
@@ -47,7 +90,7 @@ $colorccc: #ccc;
     }
 }
 
-@mixin wordbreak() {//文本自动换行
+%wordbreak() {//文本自动换行
     word-wrap: break-word;
     word-break:break-all;
 }
@@ -56,10 +99,26 @@ $colorccc: #ccc;
     appearance: normal;
 }
 
-@mixin textoverflow() {//单行文本缩略
+%textoverflow {//单行文本缩略
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow:hidden;
+}
+
+%textspace{//文本两端对齐
+  word-spacing:-1em;
+  text-align:justify;
+  text-justify:distribute-all-lines;
+  text-align-last:justify;
+  -moz-text-align-last:justify;
+  -webkit-text-align-last:justify;
+  &::after{
+    content:"";
+    display: inline-block;
+    width:100%;
+    overflow:hidden;
+    height:0;
+  }
 }
 
 %centerblock{//设置垂直居中
@@ -68,9 +127,38 @@ $colorccc: #ccc;
     margin-right: auto;
 }
 
+%centercontent{//设置内容居中
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .fl{
     float: left;
 }
 .fr{
     float: right;
+}
+.tool-mgt-40{
+  margin-top: rem(40);
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5){
+  .border-1px-t{
+    &::after{
+      -webkit-transform: scaleY(0.7);
+      transform: scaleY(0.7);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+  .border-1px-t{
+    &::after{
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
 }
