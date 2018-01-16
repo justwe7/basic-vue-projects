@@ -14,7 +14,7 @@ let axios_instance = axios.create({
 
 let isDev = process.env.NODE_ENV === 'development';
 if (isDev){//如果是开发环境 设置一个模拟的请求头
-  axios_instance.defaults.baseURL = '/api'; //设置baseurl mock地址
+  //axios_instance.defaults.baseURL = '/api'; //设置baseurl mock地址
   /*
   代理url在 config下index中设置
    */
