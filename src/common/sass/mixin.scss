@@ -79,7 +79,7 @@ $def_bg_color: #f8f8f8;
 }
 
 
-%clearfix(){//清除浮动
+%clearfix {//清除浮动
     &:after{
         display: block;
         content: "";
@@ -90,7 +90,7 @@ $def_bg_color: #f8f8f8;
     }
 }
 
-%wordbreak() {//文本自动换行
+%wordbreak {//文本自动换行
     word-wrap: break-word;
     word-break:break-all;
 }
