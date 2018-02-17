@@ -6,8 +6,8 @@
       <li class="fr">222</li>
     </ul>
     <a href="javascript:;" @click="push">添加路由（无页面跳404）</a>
-    <router-link to="/home/child">打开子页面</router-link>
-    <router-view></router-view>
+    <router-link to="/home/child/i'mdata">打开子页面</router-link>
+    <router-view />
   </div>
 </template>
 
@@ -29,13 +29,12 @@ export default {
 }
 </script>
 
-<!-- scoped添加私有样式  lang添加babel编译  rel添加IDE识别 -->
 <style scoped lang="scss" rel="stylesheet/scss">
 .home{
     ul{
         width: unit(300rem);
         @extend %centerblock;
-        @include clearfix();
+        @extend %clearfix;
         background-color: $colorccc;
         background-repeat: no-repeat;
         @include bg-image('icon');

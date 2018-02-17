@@ -12,15 +12,23 @@ const Home = (resolve) => { //按需加载方式1
   })
 }
 
+const Nav = (resolve) => {
+  import('@/base/nav/nav').then((module) => {
+    resolve(module)
+  })
+}
+
 Vue.use(VueRouter)
 const routes = [//设置路由的页面
     {
         path: '/home',
-        // redirect:'/hello', //重定向至 某个页面
-        component: Home,
+        components: {
+          default: Home,
+          navbar: Nav
+        },
         children: [
             {
-              path: 'child',
+              path: 'child/:data',
               component: Homechild
             }
           ]

@@ -23,9 +23,10 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'my_assets': resolve('./src/assets'),//  以下新增路径简写
-      '@tmp': resolve('./src/components'),// 模板组件
-      '@bstmp': resolve('./src/base'),// 模板子组件
+      '@assets': resolve('./src/assets'),//  以下新增路径简写
+      '@tpl': resolve('./src/components'),// 模板组件
+      '@bstpl': resolve('./src/base'),// 模板子组件
+      '@api': resolve('./src/api'),// 接口管理
       '@common': resolve('./src/common') //公用引入路径
     }
   },

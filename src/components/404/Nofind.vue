@@ -15,7 +15,6 @@ export default {
 }
 </script>
 
-<!-- scoped添加私有样式  lang添加babel编译  rel添加IDE识别 -->
 <style scoped lang="scss" rel="stylesheet/scss">
 
 </style>
