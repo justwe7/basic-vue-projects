@@ -44,29 +44,31 @@ $def_bg_color: #f8f8f8;
     }
 }
 
-@mixin border-1px-b($color){//设置下边框
+@mixin border-1px-b($color,$width:100%,$left:0,$bottom:0){//设置下边框 (颜色,[宽度,左边距,下边框(100%上边框)])
   position: relative;
   &:after{
     content: '';
     display: block;
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-bottom: 1px solid $color;
+    left: $left;
+    bottom: $bottom;
+    width: $width;
+    height: 1px;
+    background-color: $color;
   }
 }
 
-@mixin border-1px-l($color){//设置左边框
+@mixin border-1px-l($color,$height:100%,$top:0,$left:0){//设置左边框 (颜色,[宽度,上边距,左边框(100%右边框)])
   position: relative;
   &:after{
     content: '';
     display: block;
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    border-left: 1px solid $color;
+    left: $left;
+    top: $top;
+    width: 1px;
+    height: $height;
+    background-color: $color;
   }
 }
 
